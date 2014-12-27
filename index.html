@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>weather app</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+        
+        $.simpleWeather({
+    location: 'Tacoma, WA',
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+        
+        });
+    });
+    </script>
+</head>
+
+    <div id="weather" class="weather">
+        
+    </div>
